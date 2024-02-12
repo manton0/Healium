@@ -32,7 +32,7 @@ end
 function Healium_InitSpells(class, race)
 	
 		Healium_DebugPrint("Initspells")
-	
+
 		AddSpell(774)		-- Rejuvenation
 		AddSpell(8936)		-- Regrowth
 		AddSpell(33763)		-- Lifebloom
@@ -80,32 +80,29 @@ function Healium_InitSpells(class, race)
 		AddSpell(53601)		-- Sacred Shield
 		AddSpell(475)
 		
-		-- Druid  Remove Curse		
-		Cures[SpellName(2782)] = { CanCureCurse = true }
-		
-		-- Druid Abolish Poison
-		Cures[SpellName(2893)] = { CanCurePoison = true } 
-		
-		-- Druid Cure Poison
-		Cures[SpellName(8946)] = { CanCurePoison = true } 
-		
+				 
 		-- Priest Abolish Disease
 		Cures[SpellName(552)] = { CanCureDisease = true }
-			
 		-- Priest Cure Disease
 		Cures[SpellName(528)] = { CanCureDisease = true}
-			
 		-- Priest Dispel Magic
 		Cures[SpellName(527)]  = { CanCureMagic = true }
-		
-		-- Shaman Cure Toxins
-		Cures[SpellName(526)] = { CanCurePoison = true, CanCureDisease = true }
-			
+		-- dispel curse
+		Cures[SpellName(475)] = { CanCureCurse = true }
+		-- Druid  Remove Curse		
+		Cures[SpellName(2782)] = { CanCureCurse = true }
 		-- Shaman Cleanse Spirit
 		Cures[SpellName(51886)] = { CanCurePoison = true, CanCureDisease = true, CanCureCurse = true } 
-		
-		Cures[SpellName(475)] = { CanCureCurse = true }
-	
+		-- purify
+		Cures[SpellName(1152)] = { CanCurePoison = true, CanCureDisease = true, CanCureMagic = true }
+		-- cleanse
+		Cures[SpellName(4987)] = { CanCurePoison = true, CanCureDisease = true, CanCureMagic = true }
+		-- Druid Abolish Poison
+		Cures[SpellName(2893)] = { CanCurePoison = true } 
+		-- Shaman Cure Toxins
+		Cures[SpellName(526)] = { CanCurePoison = true, CanCureDisease = true }
+		-- Druid Cure Poison
+		Cures[SpellName(8946)] = { CanCurePoison = true }
 	
 	CuresCount = Count(Cures)
 end
